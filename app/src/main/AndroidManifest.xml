@@ -5,20 +5,27 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:name=".mvp.App"
+        android:name=".base.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".flow.repository_list.MainActivity">
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN" />-->
+
+                <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            <!--</intent-filter>-->
+        </activity>
+        <activity android:name=".flow.repository.RepositoryDetailActivity" />
+        <activity android:name=".flow.splash.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".flow.repository.RepositoryDetailActivity"></activity>
     </application>
 
 </manifest>

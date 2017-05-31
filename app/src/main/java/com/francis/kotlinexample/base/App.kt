@@ -1,4 +1,4 @@
-package com.francis.kotlinexample.mvp
+package com.francis.kotlinexample.base
 
 import android.app.Application
 import kotlin.properties.Delegates

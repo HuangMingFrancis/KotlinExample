@@ -13,4 +13,8 @@ object ApiSettings {
 
     const val ORGANIZATION_REPOS = "orgs/{$PATH_ORGANIZATION}/repos"
     const val REPOSITORY = "/repos/{$PATH_OWNER}/{$PATH_REPO}"
+
+    const val REPOSITORY_JLT = "/mobile/{$PATH_OWNER}/{$PATH_REPO}"
+
+
 }
