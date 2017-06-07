@@ -1,8 +1,10 @@
 package com.francis.kotlinexample.flow.login
 
 import android.os.Bundle
+import android.view.View
 import com.francis.kotlinexample.R
 import com.francis.kotlinexample.mvp.BaseMvpActivity
+import kotlinx.android.synthetic.main.activity_login.*
 
 /**
  * 登录界面
@@ -16,8 +18,12 @@ class LoginActivity(override var mPresenter: LoginContract.Presenter = LoginPres
     }
 
     override fun initData() {
+
     }
 
     override fun initListener() {
+        login_btnLogin.setOnClickListener(View.OnClickListener {
+            mPresenter.login(login_edtId.text.toString(), login_edtPwd.text.toString())
+        })
     }
 }

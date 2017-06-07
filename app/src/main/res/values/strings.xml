@@ -9,4 +9,12 @@
     <string name="internet_connection_unavailable">Internet connection unavailable</string>
     <string name="server_error">Server error</string>
     <string name="lbl_reload">Reload</string>
+
+    <!-- login -->
+    <string name="idtxthint">请输入用户名</string>
+    <string name="pwdtxthint">请输入密码</string>
+    <string name="loginbtntext">司机登录</string>
+    <string name="input_username">请输入手机号</string>
+    <string name="input_password">请输入密码</string>
+    <string name="input_password2">请输入验证码</string>
 </resources>

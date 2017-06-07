@@ -5,4 +5,8 @@
     <color name="colorAccent">#FF4081</color>
 
     <color name="text_grey">#D7DBDF</color>
+    <color name="bgColor_alertview_alert">#EEE9E9</color>
+    <color name="app_main_color_normal">#3cbebc</color> <!-- 程序主色调 -->
+    <color name="app_main_color_pressed">#309896</color> <!-- 程序主色调加深 -->
+    <color name="white">#ffffff</color>
 </resources>

@@ -2,17 +2,16 @@ package com.francis.kotlinexample.flow.splash
 
 import android.os.Bundle
 import com.francis.kotlinexample.R
+import com.francis.kotlinexample.flow.login.LoginActivity
 import com.francis.kotlinexample.mvp.BaseMvpActivity
-import com.francis.kotlinexample.util.sp.ProjectSPUtils
+import org.jetbrains.anko.startActivity
+import java.util.*
 
 /**
  * 启动时的加载页
  */
 class SplashActivity(override var mPresenter: SplashContract.Presenter = SplashPresenter()) :
         BaseMvpActivity<SplashContract.View, SplashContract.Presenter>(), SplashContract.View{
-
-    var isFirstIn = false
-    var isLogin = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,15 +20,24 @@ class SplashActivity(override var mPresenter: SplashContract.Presenter = SplashP
     }
 
     override fun initData() {
-        readSharedPreferences()
         mPresenter.getServerAppVersion()
+        gotoLogin()
     }
 
     override fun initListener() {
     }
 
-    fun readSharedPreferences(){
-        isFirstIn = ProjectSPUtils.getIsFirstLogin()
-        isLogin = ProjectSPUtils.getIsLogin(false)
+    fun gotoLogin(){
+        val task = MyTask()
+        val time = Timer()
+        time.schedule(task, 2000)
     }
+
+    inner class MyTask : TimerTask(){
+        override fun run() {
+            startActivity<LoginActivity>()
+        }
+
+    }
+
 }

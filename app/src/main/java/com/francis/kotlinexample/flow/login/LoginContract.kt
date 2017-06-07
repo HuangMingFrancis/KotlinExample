@@ -10,6 +10,6 @@ object LoginContract {
     interface View : BaseMvpView{}
 
     interface Presenter : BaseMvpPresenter<View>{
-        
+        fun login(loginName: String, loginPsw: String)
     }
 }
