@@ -2,6 +2,7 @@ package com.francis.kotlinexample.flow.repository_list
 
 import com.francis.kotlinexample.manager.ApiManager
 import com.francis.kotlinexample.mvp.BaseMvpPresenterImpl
+import rx.functions.Action0
 import rx.functions.Action1
 
 /**
@@ -18,12 +19,12 @@ class RepositoriesPresenter : BaseMvpPresenterImpl<RepositoriesContract.View>(),
     override fun loadRepositories() {
         mView?.showProgress()
         ApiManager.loadOrganizationRepos(ORGANIZATION_NAME, REPOS_TYPE)
-                .doOnError {
-                    mView?.hideProgress()
-                    mView?.showError(it.toString()) }
                 .subscribe(Action1 {
-                    mView?.hideProgress()
                     mView?.showOrganizations(it)
+                }, Action1 {
+                    mView?.showError(it.toString())
+                }, Action0 {
+                    mView?.hideProgress()
                 })
     }
 }

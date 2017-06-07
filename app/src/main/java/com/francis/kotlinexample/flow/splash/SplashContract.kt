@@ -8,7 +8,6 @@ import com.francis.kotlinexample.mvp.BaseMvpView
  */
 interface SplashContract {
     interface View : BaseMvpView{
-
     }
 
     interface Presenter : BaseMvpPresenter<View>{

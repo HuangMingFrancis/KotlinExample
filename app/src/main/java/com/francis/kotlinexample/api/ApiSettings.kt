@@ -14,7 +14,8 @@ object ApiSettings {
     const val ORGANIZATION_REPOS = "orgs/{$PATH_ORGANIZATION}/repos"
     const val REPOSITORY = "/repos/{$PATH_OWNER}/{$PATH_REPO}"
 
-    const val REPOSITORY_JLT = "/mobile/{$PATH_OWNER}/{$PATH_REPO}"
+    //获得版本号
+    const val URL_GET_APP_VERSION = "mobile/common/getAppVersion.shtml"
 
 
 }

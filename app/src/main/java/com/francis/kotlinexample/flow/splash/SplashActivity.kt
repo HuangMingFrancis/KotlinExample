@@ -22,6 +22,7 @@ class SplashActivity(override var mPresenter: SplashContract.Presenter = SplashP
 
     override fun initData() {
         readSharedPreferences()
+        mPresenter.getServerAppVersion()
     }
 
     override fun initListener() {
@@ -30,7 +31,5 @@ class SplashActivity(override var mPresenter: SplashContract.Presenter = SplashP
     fun readSharedPreferences(){
         isFirstIn = ProjectSPUtils.getIsFirstLogin()
         isLogin = ProjectSPUtils.getIsLogin(false)
-
-        showMessage("" + isFirstIn + " " + isLogin)
     }
 }
