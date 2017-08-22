@@ -18,8 +18,6 @@ abstract class BaseMvpActivity<V : BaseMvpView , T : BaseMvpPresenter<V>> :
         super.onCreate(savedInstanceState)
         mPresenter.attachView(this as V)
 
-        initData()
-        initListener()
     }
 
     override fun getContext(): Context {
@@ -49,6 +47,8 @@ abstract class BaseMvpActivity<V : BaseMvpView , T : BaseMvpPresenter<V>> :
 
     override fun onResume() {
         super.onResume()
+        initData()
+        initListener()
     }
 
     abstract fun initData()

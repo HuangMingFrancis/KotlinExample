@@ -9,4 +9,9 @@
     <color name="app_main_color_normal">#3cbebc</color> <!-- 程序主色调 -->
     <color name="app_main_color_pressed">#309896</color> <!-- 程序主色调加深 -->
     <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="divider">#e6e6e6</color>
+    <color name="transparent">#0000</color>
+    <color name="textbg">#8F9AA8</color>
+    <color name="gray">#848383</color>
 </resources>

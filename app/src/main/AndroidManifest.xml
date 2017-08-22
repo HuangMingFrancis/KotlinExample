@@ -21,7 +21,8 @@
             <!-- </intent-filter> -->
         </activity>
         <activity android:name=".flow.repository.RepositoryDetailActivity" />
-        <activity android:name=".flow.splash.SplashActivity">
+        <activity android:name=".flow.splash.SplashActivity"
+            android:theme="@style/Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
