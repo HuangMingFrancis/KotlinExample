@@ -9,6 +9,7 @@ import com.francis.kotlinexample.mvp.BaseMvpActivity
 class HomeActivity(override var mPresenter: HomeContract.Presenter = HomePresenter())
     : BaseMvpActivity< HomeContract.View, HomeContract.Presenter>(), HomeContract.View{
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
 
     }
