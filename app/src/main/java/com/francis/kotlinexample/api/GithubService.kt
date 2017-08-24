@@ -1,7 +1,7 @@
 package com.francis.kotlinexample.api
 
-import com.francis.kotlinexample.model.Repository
-import com.francis.kotlinexample.model.RepositoryDetail
+import com.francis.kotlinexample.api.model.Repository
+import com.francis.kotlinexample.api.model.RepositoryDetail
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query

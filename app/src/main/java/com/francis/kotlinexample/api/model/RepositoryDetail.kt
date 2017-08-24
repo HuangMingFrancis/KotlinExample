@@ -1,4 +1,4 @@
-package com.francis.kotlinexample.model
+package com.francis.kotlinexample.api.model
 
 import com.google.gson.annotations.SerializedName
 

@@ -1,16 +1,20 @@
-package com.francis.kotlinexample.flow.repository
+package com.francis.kotlinexample.ui.activity
 
-import android.os.Bundle
 import android.view.View
 import client.yalantis.com.githubclient.formatDate
 import com.francis.kotlinexample.R
-import com.francis.kotlinexample.model.RepositoryDetail
+import com.francis.kotlinexample.api.model.RepositoryDetail
+import com.francis.kotlinexample.flow.repository.RepositoryDetailsContract
+import com.francis.kotlinexample.flow.repository.RepositoryDetailsPresenter
 import com.francis.kotlinexample.mvp.BaseMvpActivity
 import kotlinx.android.synthetic.main.activity_repository_detail.*
 
 class RepositoryDetailActivity(override var mPresenter: RepositoryDetailsContract.Presenter = RepositoryDetailsPresenter())
             : BaseMvpActivity<RepositoryDetailsContract.View,
-            RepositoryDetailsContract.Presenter>(), RepositoryDetailsContract.View {
+        RepositoryDetailsContract.Presenter>(), RepositoryDetailsContract.View {
+    override fun getLayoutId(): Int {
+        return R.layout.activity_repository_detail
+    }
 
     override fun initData() {
         toolbar.title = getString(R.string.title_activity_details)
@@ -22,12 +26,6 @@ class RepositoryDetailActivity(override var mPresenter: RepositoryDetailsContrac
 
     companion object {
         const val NAME = "name"
-    }
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_repository_detail)
-
     }
 
     override fun showProgress() {

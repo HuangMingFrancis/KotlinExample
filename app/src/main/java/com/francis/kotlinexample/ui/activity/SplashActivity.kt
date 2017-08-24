@@ -1,15 +1,15 @@
-package com.francis.kotlinexample.flow.splash
+package com.francis.kotlinexample.ui.activity
 
 import android.content.Intent
 import android.graphics.Typeface
-import android.os.Bundle
 import android.view.WindowManager
 import android.view.animation.AlphaAnimation
 import android.view.animation.Animation
 import android.view.animation.AnimationSet
 import android.view.animation.ScaleAnimation
 import com.francis.kotlinexample.R
-import com.francis.kotlinexample.flow.login.LoginActivity
+import com.francis.kotlinexample.flow.splash.SplashContract
+import com.francis.kotlinexample.flow.splash.SplashPresenter
 import com.francis.kotlinexample.mvp.BaseMvpActivity
 import kotlinx.android.synthetic.main.activity_splash.*
 
@@ -17,15 +17,19 @@ import kotlinx.android.synthetic.main.activity_splash.*
  * 启动时的加载页
  */
 class SplashActivity(override var mPresenter: SplashContract.Presenter = SplashPresenter()) :
-        BaseMvpActivity<SplashContract.View, SplashContract.Presenter>(), SplashContract.View{
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+        BaseMvpActivity<SplashContract.View, SplashContract.Presenter>(), SplashContract.View {
+    override fun getLayoutId(): Int {
         //设置全屏
         window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
-        setContentView(R.layout.activity_splash)
-
+        return R.layout.activity_splash
     }
+
+//    override fun onCreate(savedInstanceState: Bundle?) {
+//        super.onCreate(savedInstanceState)
+//        //设置全屏
+//        window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
+//        setContentView(R.layout.activity_splash)
+//    }
 
     override fun initData() {
         mPresenter.getServerAppVersion()
@@ -48,7 +52,7 @@ class SplashActivity(override var mPresenter: SplashContract.Presenter = SplashP
         animationSet.addAnimation(scaleAnimation)
         animationSet.duration = 1000
         iv_icon_splash.startAnimation(animationSet)
-        animationSet.setAnimationListener(object : Animation.AnimationListener{
+        animationSet.setAnimationListener(object : Animation.AnimationListener {
             override fun onAnimationRepeat(animation: Animation?) {
 
             }
@@ -58,7 +62,7 @@ class SplashActivity(override var mPresenter: SplashContract.Presenter = SplashP
             }
 
             override fun onAnimationEnd(animation: Animation?) {
-                startActivity(Intent(getContext(), LoginActivity::class.java))
+                startActivity(Intent(getContext(), HomeActivity::class.java))
                 finish()
             }
         })

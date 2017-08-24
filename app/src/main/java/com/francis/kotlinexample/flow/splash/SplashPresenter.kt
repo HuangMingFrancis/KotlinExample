@@ -2,10 +2,8 @@ package com.francis.kotlinexample.flow.splash
 
 import android.text.TextUtils
 import com.francis.kotlinexample.base.Constants
-import com.francis.kotlinexample.manager.JLTApiManager
-import com.francis.kotlinexample.model.AppVersionEntity
+import com.francis.kotlinexample.api.model.AppVersionEntity
 import com.francis.kotlinexample.mvp.BaseMvpPresenterImpl
-import rx.functions.Action1
 
 /**
  * Created by Francis on 2017-5-31.
@@ -21,16 +19,16 @@ class SplashPresenter : BaseMvpPresenterImpl<SplashContract.View>(),
      * 获得服务器版本号
      */
     override fun getServerAppVersion() {
-        JLTApiManager.getAppVersion(appTypeCode)
-                .subscribe(Action1 {
-                    if (it.result){
-                        handlerAppVersion(it.data)
-                    } else {
-                        mView?.showError(it.msg)
-                    }
-                }, Action1 {
-                    mView?.showError(it.message)
-                })
+//        JLTApiManager.getAppVersion(appTypeCode)
+//                .subscribe(Action1 {
+//                    if (it.result){
+//                        handlerAppVersion(it.data)
+//                    } else {
+//                        mView?.showError(it.msg)
+//                    }
+//                }, Action1 {
+//                    mView?.showError(it.message)
+//                })
     }
 
     //记录版本信息

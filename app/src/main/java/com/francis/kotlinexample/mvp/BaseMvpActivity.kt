@@ -17,7 +17,7 @@ abstract class BaseMvpActivity<V : BaseMvpView , T : BaseMvpPresenter<V>> :
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mPresenter.attachView(this as V)
-
+        setContentView(getLayoutId())
     }
 
     override fun getContext(): Context {
@@ -54,4 +54,6 @@ abstract class BaseMvpActivity<V : BaseMvpView , T : BaseMvpPresenter<V>> :
     abstract fun initData()
 
     abstract fun initListener()
+
+    abstract fun  getLayoutId(): Int
 }

@@ -1,7 +1,7 @@
 package com.francis.kotlinexample.api
 
-import com.francis.kotlinexample.model.AppVersionEntity
-import com.francis.kotlinexample.model.BaseRespEntity
+import com.francis.kotlinexample.api.model.AppVersionEntity
+import com.francis.kotlinexample.api.model.BaseRespEntity
 import retrofit2.http.GET
 import retrofit2.http.Query
 import rx.Observable

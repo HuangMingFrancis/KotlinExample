@@ -1,4 +1,4 @@
-package com.francis.kotlinexample.model
+package com.francis.kotlinexample.api.model
 
 /**
  * Created by Francis on 2017-6-7.

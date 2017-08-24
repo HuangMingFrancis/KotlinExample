@@ -1,34 +1,33 @@
-package com.francis.kotlinexample.flow.repository_list
+package com.francis.kotlinexample.ui.activity
 
 import android.content.Intent
-import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.view.View
 import com.francis.kotlinexample.R
-import com.francis.kotlinexample.flow.repository.RepositoryDetailActivity
-import com.francis.kotlinexample.model.Repository
+import com.francis.kotlinexample.api.model.Repository
+import com.francis.kotlinexample.flow.repository_list.RepositoriesContract
+import com.francis.kotlinexample.flow.repository_list.RepositoriesPresenter
 import com.francis.kotlinexample.mvp.BaseMvpActivity
+import com.francis.kotlinexample.ui.adapter.RepositoriesAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
 
 class MainActivity(override var mPresenter: RepositoriesPresenter = RepositoriesPresenter()) :
         BaseMvpActivity<RepositoriesContract.View, RepositoriesPresenter>(),
-        RepositoriesContract.View{
+        RepositoriesContract.View {
+    override fun getLayoutId(): Int {
+        return R.layout.activity_main
+    }
 
     private var mAdapter: RepositoriesAdapter? = null
 
     private var repositories: MutableList<Repository> = ArrayList<Repository>()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+    override fun initData() {
+        title = getString(R.string.title_activity_repositories)
+        mPresenter.loadRepositories()
 
         initAdapter()
-    }
-
-    override fun initData() {
-        toolbar.title = getString(R.string.title_activity_repositories)
-        mPresenter.loadRepositories()
     }
 
     override fun initListener() {

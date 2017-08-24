@@ -1,6 +1,6 @@
 package com.francis.kotlinexample.flow.repository_list
 
-import com.francis.kotlinexample.model.Repository
+import com.francis.kotlinexample.api.model.Repository
 import com.francis.kotlinexample.mvp.BaseMvpPresenter
 import com.francis.kotlinexample.mvp.BaseMvpView
 

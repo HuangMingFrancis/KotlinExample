@@ -1,7 +1,6 @@
-package com.francis.kotlinexample.manager
+package com.francis.kotlinexample.api.manager
 
-import com.francis.kotlinexample.api.GithubService
-import com.francis.kotlinexample.model.RepositoryDetail
+import com.francis.kotlinexample.api.JLTService
 import com.google.gson.GsonBuilder
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
@@ -9,24 +8,22 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
-import rx.Observable
 import rx.android.schedulers.AndroidSchedulers
 import rx.schedulers.Schedulers
 
 /**
- * Created by Francis on 2017-5-31.
- * Api操作类
+ * Created by Francis on 2017-6-7.
  */
-object ApiManager {
-    private const val SERVER: String = "https://api.github.com/"
+object JLTApiManager {
+    private const val SERVER: String = "http://192.168.0.193:8080/jlt-mobile/"
 
-    private lateinit var mGithubService: GithubService
+    private lateinit var mService: JLTService
 
     init {
         initServices(initRetrofit())
     }
 
-    private fun initRetrofit(): Retrofit{
+    private fun initRetrofit(): Retrofit {
         val interceptor = HttpLoggingInterceptor().apply {
             level = HttpLoggingInterceptor.Level.BODY
         }
@@ -49,24 +46,19 @@ object ApiManager {
                 .build()
     }
 
-    private fun createGsonConverter(): GsonConverterFactory{
+    private fun createGsonConverter(): GsonConverterFactory {
         val builder = GsonBuilder().serializeNulls()
         return GsonConverterFactory.create(builder.create())
     }
 
     private fun initServices(retrofit: Retrofit){
-        mGithubService = retrofit.create(GithubService::class.java)
+        mService = retrofit.create(JLTService::class.java)
     }
 
-    fun loadOrganizationRepos(organizationName: String, reposType: String) =
-            mGithubService.getOrganizationRepos(organizationName, reposType)
+
+    //获得版本号
+    fun getAppVersion(appTypeCode: String) =
+            mService.getAppVersion(appTypeCode)
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
-
-    fun loadRepository(owner: String, name: String): Observable<RepositoryDetail>{
-        return mGithubService.getRepository(owner, name)
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-    }
-
 }

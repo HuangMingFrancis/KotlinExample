@@ -1,6 +1,6 @@
 package com.francis.kotlinexample.flow.repository_list
 
-import com.francis.kotlinexample.manager.ApiManager
+import com.francis.kotlinexample.api.manager.ApiManager
 import com.francis.kotlinexample.mvp.BaseMvpPresenterImpl
 import rx.functions.Action0
 import rx.functions.Action1
