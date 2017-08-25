@@ -2,9 +2,9 @@ package com.francis.kotlinexample.ui.activity
 
 import android.view.View
 import com.francis.kotlinexample.R
-import com.francis.kotlinexample.flow.login.LoginContract
-import com.francis.kotlinexample.flow.login.LoginPresenter
 import com.francis.kotlinexample.mvp.BaseMvpActivity
+import com.francis.kotlinexample.mvp.contract.LoginContract
+import com.francis.kotlinexample.mvp.presenter.LoginPresenter
 import kotlinx.android.synthetic.main.activity_login.*
 
 /**

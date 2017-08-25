@@ -1,12 +1,13 @@
-package com.francis.kotlinexample.flow.login
+package com.francis.kotlinexample.mvp.presenter
 
 import android.text.TextUtils
 import com.francis.kotlinexample.mvp.BaseMvpPresenterImpl
+import com.francis.kotlinexample.mvp.contract.LoginContract
 
 /**
  * Created by Francis on 2017-6-7.
  */
-class LoginPresenter : BaseMvpPresenterImpl<LoginContract.View>(), LoginContract.Presenter{
+class LoginPresenter : BaseMvpPresenterImpl<LoginContract.View>(), LoginContract.Presenter {
     companion object{
         private val LOGIN_ERROR_BY_NAME = "请输入手机号"
         private val LOGIN_ERROR_BY_PSW = "请输入验证码"

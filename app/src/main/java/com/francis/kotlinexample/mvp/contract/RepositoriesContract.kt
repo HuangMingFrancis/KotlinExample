@@ -1,4 +1,4 @@
-package com.francis.kotlinexample.flow.repository_list
+package com.francis.kotlinexample.mvp.contract
 
 import com.francis.kotlinexample.api.model.Repository
 import com.francis.kotlinexample.mvp.BaseMvpPresenter
@@ -10,7 +10,7 @@ import com.francis.kotlinexample.mvp.BaseMvpView
  */
 object RepositoriesContract {
 
-    interface View : BaseMvpView{
+    interface View : BaseMvpView {
         fun showOrganizations(repositors: MutableList<Repository>)
         fun showProgress()
         fun hideProgress()

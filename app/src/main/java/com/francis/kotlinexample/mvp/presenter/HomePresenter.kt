@@ -1,5 +1,6 @@
-package com.francis.kotlinexample.flow.home
+package com.francis.kotlinexample.mvp.presenter
 
+import com.francis.kotlinexample.mvp.contract.HomeContract
 import com.francis.kotlinexample.mvp.BaseMvpPresenterImpl
 import java.util.*
 

@@ -8,8 +8,8 @@ import android.view.animation.Animation
 import android.view.animation.AnimationSet
 import android.view.animation.ScaleAnimation
 import com.francis.kotlinexample.R
-import com.francis.kotlinexample.flow.splash.SplashContract
-import com.francis.kotlinexample.flow.splash.SplashPresenter
+import com.francis.kotlinexample.mvp.contract.SplashContract
+import com.francis.kotlinexample.mvp.presenter.SplashPresenter
 import com.francis.kotlinexample.mvp.BaseMvpActivity
 import kotlinx.android.synthetic.main.activity_splash.*
 

@@ -4,8 +4,8 @@ import android.view.View
 import client.yalantis.com.githubclient.formatDate
 import com.francis.kotlinexample.R
 import com.francis.kotlinexample.api.model.RepositoryDetail
-import com.francis.kotlinexample.flow.repository.RepositoryDetailsContract
-import com.francis.kotlinexample.flow.repository.RepositoryDetailsPresenter
+import com.francis.kotlinexample.mvp.contract.RepositoryDetailsContract
+import com.francis.kotlinexample.mvp.presenter.RepositoryDetailsPresenter
 import com.francis.kotlinexample.mvp.BaseMvpActivity
 import kotlinx.android.synthetic.main.activity_repository_detail.*
 

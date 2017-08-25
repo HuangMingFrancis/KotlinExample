@@ -1,5 +1,4 @@
-package client.yalantis.com.githubclient
-
+package com.francis.kotlinexample.util
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import java.text.SimpleDateFormat

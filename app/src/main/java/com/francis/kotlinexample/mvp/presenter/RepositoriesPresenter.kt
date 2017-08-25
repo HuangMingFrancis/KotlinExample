@@ -1,6 +1,7 @@
-package com.francis.kotlinexample.flow.repository_list
+package com.francis.kotlinexample.mvp.presenter
 
 import com.francis.kotlinexample.api.manager.ApiManager
+import com.francis.kotlinexample.mvp.contract.RepositoriesContract
 import com.francis.kotlinexample.mvp.BaseMvpPresenterImpl
 import rx.functions.Action0
 import rx.functions.Action1
@@ -9,7 +10,7 @@ import rx.functions.Action1
  * Created by Francis on 2017-5-31.
  */
 class RepositoriesPresenter : BaseMvpPresenterImpl<RepositoriesContract.View>(),
-        RepositoriesContract.Presenter{
+        RepositoriesContract.Presenter {
 
     companion object {
         private val ORGANIZATION_NAME = "Yalantis"

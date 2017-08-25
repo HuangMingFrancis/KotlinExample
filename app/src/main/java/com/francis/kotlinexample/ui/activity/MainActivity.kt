@@ -5,8 +5,8 @@ import android.support.v7.widget.LinearLayoutManager
 import android.view.View
 import com.francis.kotlinexample.R
 import com.francis.kotlinexample.api.model.Repository
-import com.francis.kotlinexample.flow.repository_list.RepositoriesContract
-import com.francis.kotlinexample.flow.repository_list.RepositoriesPresenter
+import com.francis.kotlinexample.mvp.contract.RepositoriesContract
+import com.francis.kotlinexample.mvp.presenter.RepositoriesPresenter
 import com.francis.kotlinexample.mvp.BaseMvpActivity
 import com.francis.kotlinexample.ui.adapter.RepositoriesAdapter
 import kotlinx.android.synthetic.main.activity_main.*

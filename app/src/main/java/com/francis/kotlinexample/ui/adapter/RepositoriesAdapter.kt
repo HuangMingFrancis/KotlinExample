@@ -6,6 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import com.francis.kotlinexample.R
 import com.francis.kotlinexample.api.model.Repository
+import kotlinx.android.synthetic.main.item_repository.view.*
+
 /**
  * Created by Francis on 2017-5-31.
  */
@@ -29,6 +31,9 @@ class RepositoriesAdapter(private val repositories: MutableList<Repository>,
     class ViewHolder(itemView: View, val onClick: (Repository) -> Unit) : RecyclerView.ViewHolder(itemView){
         fun bindData(repository: Repository){
             with(repository){
+                itemView.textViewTitle.text = repository.name
+                itemView.textViewDescription.text = repository.description
+                itemView.setOnClickListener { onClick(this) }
             }
         }
     }

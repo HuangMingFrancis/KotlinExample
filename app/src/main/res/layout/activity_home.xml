@@ -29,6 +29,7 @@
 
     </android.support.v7.widget.Toolbar>
 
+
     <View
         android:layout_above="@+id/rg_root"
         android:background="@color/gray"
@@ -90,5 +91,13 @@
             android:gravity="center"
             android:text="我的"/>
     </RadioGroup>
+
+    <FrameLayout
+        android:layout_above="@id/rg_root"
+        android:layout_below="@id/toolbar"
+        android:id="@+id/fl_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </FrameLayout>
 
 </RelativeLayout>

@@ -1,15 +1,16 @@
-package com.francis.kotlinexample.flow.splash
+package com.francis.kotlinexample.mvp.presenter
 
 import android.text.TextUtils
 import com.francis.kotlinexample.base.Constants
 import com.francis.kotlinexample.api.model.AppVersionEntity
+import com.francis.kotlinexample.mvp.contract.SplashContract
 import com.francis.kotlinexample.mvp.BaseMvpPresenterImpl
 
 /**
  * Created by Francis on 2017-5-31.
  */
 class SplashPresenter : BaseMvpPresenterImpl<SplashContract.View>(),
-        SplashContract.Presenter{
+        SplashContract.Presenter {
 
     companion object{
         private val appTypeCode = "01"

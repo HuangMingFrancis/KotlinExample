@@ -1,6 +1,7 @@
-package com.francis.kotlinexample.flow.repository
+package com.francis.kotlinexample.mvp.presenter
 
 import com.francis.kotlinexample.api.manager.ApiManager
+import com.francis.kotlinexample.mvp.contract.RepositoryDetailsContract
 import com.francis.kotlinexample.mvp.BaseMvpPresenterImpl
 import rx.functions.Action0
 import rx.functions.Action1
