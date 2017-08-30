@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.francis.kotlinexample.R
 import com.francis.kotlinexample.api.model.HomeBean
+import com.francis.kotlinexample.util.ImageLoadUtils
 import kotlinx.android.synthetic.main.item_home.view.*
 
 /**

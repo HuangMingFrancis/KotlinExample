@@ -5,7 +5,7 @@ import android.widget.ImageView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.DecodeFormat
 import com.bumptech.glide.load.engine.DiskCacheStrategy
-import com.tt.lvruheng.eyepetizer.R
+import com.francis.kotlinexample.R
 
 /**
  * Created by lvruheng on 2017/7/6.

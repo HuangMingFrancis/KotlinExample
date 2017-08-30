@@ -1,12 +1,12 @@
 package com.francis.kotlinexample.ui.activity
 
 import android.view.View
-import client.yalantis.com.githubclient.formatDate
 import com.francis.kotlinexample.R
 import com.francis.kotlinexample.api.model.RepositoryDetail
 import com.francis.kotlinexample.mvp.contract.RepositoryDetailsContract
 import com.francis.kotlinexample.mvp.presenter.RepositoryDetailsPresenter
 import com.francis.kotlinexample.mvp.BaseMvpActivity
+import com.francis.kotlinexample.util.formatDate
 import kotlinx.android.synthetic.main.activity_repository_detail.*
 
 class RepositoryDetailActivity(override var mPresenter: RepositoryDetailsContract.Presenter = RepositoryDetailsPresenter())

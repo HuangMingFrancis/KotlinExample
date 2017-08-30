@@ -8,7 +8,7 @@ android {
     defaultConfig {
         applicationId "com.francis.kotlinexample"
         minSdkVersion 17
-        targetSdkVersion 25
+        targetSdkVersion 22
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -26,9 +26,9 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:25.4.0'
-    compile "com.android.support:design:25.4.0"
-    compile "com.android.support:recyclerview-v7:25.4.0"
+    compile 'com.android.support:appcompat-v7:25.0.0'
+    compile "com.android.support:design:25.0.0"
+    compile "com.android.support:recyclerview-v7:25.0.0"
 
     compile 'com.squareup.picasso:picasso:2.5.2'
     compile 'com.squareup.okhttp3:logging-interceptor:3.4.1'
@@ -42,22 +42,23 @@ dependencies {
     compile 'com.squareup.retrofit2:converter-gson:2.1.0'
     testCompile 'junit:junit:4.12'
 
-    //flexbox
-    compile 'com.google.android:flexbox:0.3.0-alpha2'
-    //glide
+//    //flexbox
+//    compile 'com.google.android:flexbox:0.3.0-alpha2'
+//    //glide
     compile 'com.github.bumptech.glide:glide:3.7.0'
-    compile 'com.shuyu:GSYVideoPlayer:1.6.8'
-    //rxdownload
-    compile 'zlc.season:rxdownload2:2.0.4'
-    //引入Log拦截器，方便DEBUG模式输出log信息
-    compile 'com.squareup.okhttp3:logging-interceptor:3.5.0'
-    //引入json转换器，方便将返回的数据转换为json格式
-    compile 'com.squareup.retrofit2:converter-gson:2.1.0'
+//    compile 'com.shuyu:GSYVideoPlayer:1.6.8'
+//    //rxdownload
+//    compile 'zlc.season:rxdownload2:2.0.4'
+//    //引入Log拦截器，方便DEBUG模式输出log信息
+//    compile 'com.squareup.okhttp3:logging-interceptor:3.5.0'
+//    //引入json转换器，方便将返回的数据转换为json格式
+//    compile 'com.squareup.retrofit2:converter-gson:2.1.0'
 
 }
 buildscript {
     repositories {
         jcenter()
+        mavenCentral()
     }
     dependencies {
         classpath "org.jetbrains.kotlin:kotlin-android-extensions:$kotlin_version"
