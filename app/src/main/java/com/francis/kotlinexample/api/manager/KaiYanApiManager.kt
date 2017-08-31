@@ -11,6 +11,8 @@ import retrofit2.converter.gson.GsonConverterFactory
 import rx.android.schedulers.AndroidSchedulers
 import rx.schedulers.Schedulers
 
+
+
 /**
  * Created by Francis on 2017-8-25.
  */
@@ -48,7 +50,8 @@ object KaiYanApiManager {
 
     private fun createGsonConverter(): GsonConverterFactory {
         val builder = GsonBuilder().serializeNulls()
-        return GsonConverterFactory.create(builder.create())
+        val gson = GsonBuilder().setLenient().create()
+        return GsonConverterFactory.create(gson)
     }
 
     private fun initServices(retrofit: Retrofit){
@@ -57,6 +60,11 @@ object KaiYanApiManager {
 
     fun getHomeData() =
             mService.getHomeData()
+                    .subscribeOn(Schedulers.io())
+                    .observeOn(AndroidSchedulers.mainThread())
+
+    fun getHomeMoreData(date: String, num: String) =
+            mService.getHomeMoreData(date, num)
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
 }
