@@ -76,6 +76,8 @@ class HomeFragment(override var mPresenter: HomePageContract.Presenter = HomePag
     }
 
     override fun onRefresh() {
+        mIsRefresh = true
+        mPresenter.getHomeData()
     }
 
 }
